@@ -1,0 +1,5 @@
+install it for accepting excel file
+
+npm install --save xlsx
+
+import * as XLSX from 'xlsx';
