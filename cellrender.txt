@@ -1,0 +1,9 @@
+ routeCellRenderer(params) {
+    var eSpan = document.createElement('a');
+    eSpan.innerHTML = params.value;
+    eSpan.addEventListener('click', () => {
+      this.router.navigate(['dashboard/Host'])
+    });
+    return eSpan;
+  }
+cellRenderer: this.routeCellRenderer.bind(this)
