@@ -1,0 +1,56 @@
+
+before column data
+
+function MoodCellRenderer() {
+    }
+
+    MoodCellRenderer.prototype.init = function (params) {
+      console.log('paramasssssss', params);
+      this.eGui = document.createElement('span');
+      if (!params.value) {
+        var imgForMood = params.value === 'Happy' ? 'https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/images/smiley.png' : 'https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/images/smiley-sad.png';
+        this.eGui.innerHTML = '<img width="20px" src="assets/loader.gif" />';
+      } else {
+        this.eGui.innerHTML = params.value;
+      }
+
+    };
+
+    MoodCellRenderer.prototype.getGui = function () {
+      return this.eGui;
+    };
+
+
+in grid options
+components?
+        moodCellRenderer: MoodCellRenderer
+      }
+
+after set row data
+
+let _that = this;
+        setTimeout(function () {
+          _that.TableTenantList.map(function (obj) {
+              obj.cntOfHostPools = 12;
+              _that.api.setRowData(_that.TableTenantList);
+          });
+        }, 2000);
+
+
+
+ sessionStorage.removeItem('access_token');
+  //        this.othercomp.openModal();
+
+
+
+
+
+
+cellRendererSelector:function (params) {
+          var moodDetails = {
+            component: 'moodCellRenderer'
+          };
+
+          return moodDetails;
+
+        }
